@@ -1,0 +1,21 @@
+<div class="immobilier-container">
+    <h1>Liste des terrains immobiliers</h1>
+
+    <br>
+    <br>
+    <br>
+    <!-- Displaying each terrain as a card -->
+    <div class="terrain-cards">
+        <div class="card" *ngFor="let terrain of radhiData; let i = index">
+
+            <div class="card-content">
+                <h3>{{ terrain.nom }}</h3>
+                <p><strong>Propriétaire :</strong> {{ terrain.owner }}</p>
+                <p><strong>Lieu :</strong> {{ terrain.place }}</p>
+                <p><strong>Superficie :</strong> {{ terrain.superficie }} m²</p>
+                <p><strong>Statut :</strong> {{ terrain.statut }}</p>
+                <p><strong>Description :</strong> {{ terrain.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>

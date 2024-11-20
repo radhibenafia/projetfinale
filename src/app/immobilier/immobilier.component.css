@@ -1,0 +1,102 @@
+.immobilier-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.immobilier-container h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Terrain cards container */
+.terrain-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    /* Augmentez minmax pour des cartes plus larges */
+    gap: 25px;
+    /* Augmentez l'espace entre les cartes */
+}
+
+/* Individual card style */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    /* Légèrement plus arrondi */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+    /* Augmentez l'intensité de l'ombre */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    /* Assurez-vous que les cartes prennent toute la largeur */
+}
+
+.card:hover {
+    transform: scale(1.08);
+    /* Augmentez l'agrandissement au survol */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    /* Augmentez la hauteur pour des images plus grandes */
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    /* Augmentez l'espace autour du texte */
+    text-align: left;
+}
+
+.card-content h3 {
+    color: #333;
+    font-size: 1.8rem;
+    /* Augmentez la taille du titre */
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 1.1rem;
+    /* Augmentez la taille du texte */
+    margin: 8px 0;
+}
+
+.card-content p strong {
+    color: #2c3e50;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .card-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terrain-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+    }
+}

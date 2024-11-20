@@ -1,0 +1,39 @@
+<div class="protestation-container">
+    <h1>Ajouter une Protestation</h1>
+
+    <form (ngSubmit)="submitProtestation()">
+        <div class="form-group">
+            <label for="protestation">Protestation :</label>
+            <input type="text" id="protestation" [(ngModel)]="protestation" name="protestation"
+                placeholder="Entrez votre protestation" required />
+        </div>
+
+        <div class="form-group">
+            <label for="autre">Autre :</label>
+            <input type="text" id="autre" [(ngModel)]="autre" name="autre" placeholder="Entrez une autre valeur"
+                required />
+        </div>
+
+        <button type="submit">Soumettre</button>
+    </form>
+
+    <p class="message">{{ message }}</p>
+
+    <!-- Bouton pour afficher les protestations de l'utilisateur -->
+    <button (click)="displayProtestations()">Afficher mes protestations</button>
+    <br>
+    <br>
+    <button (click)="sendEmail()">Réponse de protestation par email</button>
+
+    <div *ngIf="protestationsList.length > 0">
+        <h2>Mes Protestations</h2>
+        <ul>
+            <li *ngFor="let protestation of protestationsList">
+                <p><strong>Protestation:</strong> {{ protestation.protestation }}</p>
+                <p><strong>Autre:</strong> {{ protestation.autre }}</p>
+                <p><strong>Timestamp:</strong> {{ protestation.timestamp?.toDate() | date: 'short' }}</p>
+                <hr />
+            </li>
+        </ul>
+    </div>
+</div>

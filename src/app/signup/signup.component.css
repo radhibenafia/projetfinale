@@ -1,0 +1,113 @@
+/* Conteneur principal du formulaire */
+.sign-up-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sign-up-container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    /* Ombre plus prononcée au survol */
+}
+
+/* Titre */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    color: #333;
+}
+
+/* Groupes de formulaire */
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* Étiquettes */
+label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Style des champs de saisie */
+.input,
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+/* Focus sur les champs */
+.form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+/* Style des champs texte */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    font-size: 16px;
+}
+
+/* Message d'erreur */
+.error {
+    color: #ff4d4d;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Bouton de soumission */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #c6c6c6;
+    cursor: not-allowed;
+}
+
+/* Animation sur le bouton */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Style pour la mise en page mobile */
+@media (max-width: 500px) {
+    .sign-up-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

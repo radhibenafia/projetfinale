@@ -1,0 +1,35 @@
+<div class="main-container">
+    <br><br>
+    <div class="login-container">
+        <h2>Se connecter</h2>
+
+        <!-- Formulaire de connexion -->
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <!-- Nom d'utilisateur -->
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" class="form-control" [(ngModel)]="user.email"
+                    #username="ngModel" required />
+                <div *ngIf="username.invalid && username.touched" class="error">
+                    Le nom d'utilisateur est requis.
+                </div>
+            </div>
+
+            <!-- Mot de passe -->
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" class="form-control" [(ngModel)]="user.password"
+                    #password="ngModel" required />
+                <div *ngIf="password.invalid && password.touched" class="error">
+                    Le mot de passe est requis.
+                </div>
+            </div>
+
+            <!-- Bouton de soumission -->
+            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Se connecter</button>
+        </form>
+
+
+
+    </div>
+</div>

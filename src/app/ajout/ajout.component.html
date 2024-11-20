@@ -1,0 +1,54 @@
+<div class="sign-up-container">
+    <h2>Ajouter un terrain immobilier</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input id="nom" [(ngModel)]="newTerrain.nom" name="nom" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="place">Place</label>
+            <input id="place" [(ngModel)]="newTerrain.place" name="place" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="superficie">Superficie (m²)</label>
+            <input id="superficie" type="number" [(ngModel)]="newTerrain.superficie" name="superficie" required
+                class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="statut">Statut</label>
+            <select id="statut" [(ngModel)]="newTerrain.statut" name="statut" required class="form-control">
+                <option value="disponible">Disponible</option>
+                <option value="vendu">Vendu</option>
+                <option value="encours">En cours</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" [(ngModel)]="newTerrain.description" name="description"
+                class="form-control"></textarea>
+        </div>
+        <button type="submit"
+            [disabled]="!newTerrain.nom || !newTerrain.place || !newTerrain.superficie || !newTerrain.statut">Ajouter</button>
+    </form>
+</div>
+
+<div class="upload-container">
+    <!-- Formulaire pour ajouter une image -->
+    <h2>Ajouter une image pour terrain</h2>
+    <form (ngSubmit)="onUploadImage()">
+        <div class="form-group">
+            <label for="imageName">Nom de l'image</label>
+            <input type="text" id="imageName" [(ngModel)]="newImage.nomImage" name="imageName" class="form-control"
+                placeholder="Entrez le nom de l'image" required />
+        </div>
+
+        <div class="form-group">
+            <label for="image">Sélectionner une image</label>
+            <input type="file" id="image" (change)="onImageChange($event)" class="form-control" />
+        </div>
+
+        <button type="submit" [disabled]="!newImage.image || !newImage.nomImage">
+            Télécharger l'image
+        </button>
+    </form>
+</div>

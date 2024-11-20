@@ -1,0 +1,49 @@
+<div class="terrain-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+
+            <li>
+                <button class="sidebar-button" (click)="navigateTo('ajout')" [class.active]="isActive('ajout')"> AJOUT
+                    DE TERRAIN</button>
+            </li>
+            <li>
+                <button class="sidebar-button" (click)="navigateTo('profile')" [class.active]="isActive('ajout')">
+                    PROFILE</button>
+            </li>
+            <li>
+                <button class="sidebar-button" (click)="navigateTo('immobilier')"
+                    [class.active]="isActive('immobilier')">
+                    IMMOBILIER</button>
+            </li>
+            <li>
+                <button class="sidebar-button" (click)="navigateTo('protestation')"
+                    [class.active]="isActive('protestation')">
+                    PROTESTATION</button>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>Bienvenue cher client, votre email de participation {{ username || 'Invité' }} il ya une problème aller au
+            protestation
+            et envoie ton rapport</h1>
+        <p>Voici les terrains disponibles :</p>
+
+        <!-- Liste des terrains affichée sous forme de cartes -->
+        <div *ngFor="let terrain of terrains; let i = index" class="card"
+            [ngClass]="{'expanded': expandedCardIndex === i}" (click)="toggleExpansion(i)">
+
+            <div class="card-content">
+                <h3 class="card-title">{{ terrain.nom }}</h3>
+                <p class="card-text">Localisation: {{ terrain.localisation }}</p>
+                <p class="card-text">Prix: {{ terrain.prix }} €</p>
+                <p class="card-text">Description: {{ terrain.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>

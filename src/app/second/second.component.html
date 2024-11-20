@@ -1,0 +1,39 @@
+<div class="second-container">
+    <div *ngIf="isLoading">
+        <p>Chargement des données...</p>
+    </div>
+
+    <div *ngIf="!isLoading && !errorMessage && apiData">
+        <h1>{{ apiData.title }}</h1>
+        <p><strong>Description:</strong> {{ apiData.description }}</p>
+
+        <div *ngIf="apiData.resources.length">
+            <h2>Resources</h2>
+            <ul>
+                <li *ngFor="let resource of apiData.resources">
+                    <strong>{{ resource.title }}</strong><br>
+                    <p>{{ resource.description }}</p>
+                    <a [href]="resource.url" target="_blank">Access Resource</a>
+                    <p><strong>Format:</strong> {{ resource.format }}</p>
+                </li>
+            </ul>
+        </div>
+
+        <div *ngIf="apiData.organization">
+            <h2>Organization: {{ apiData.organization.name }}</h2>
+            <img [src]="apiData.organization.logo" alt="Organization Logo" width="100">
+            <p><a [href]="apiData.organization.page" target="_blank">Visit Organization Page</a></p>
+        </div>
+
+        <div *ngIf="apiData.tags.length">
+            <h3>Tags:</h3>
+            <ul>
+                <li *ngFor="let tag of apiData.tags">{{ tag }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div *ngIf="errorMessage">
+        <p style="color: red;">{{ errorMessage }}</p>
+    </div>
+</div>

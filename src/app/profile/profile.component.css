@@ -1,0 +1,54 @@
+/* Style général du profil */
+.profile-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la section profil */
+.profile-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Style des informations utilisateur */
+.profile-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Style pour les champs en gras */
+.profile-container strong {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Section de message d'erreur ou 'Aucune donnée trouvée' */
+.no-data-message {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Responsivité pour petits écrans */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .profile-container p {
+        font-size: 1rem;
+    }
+}

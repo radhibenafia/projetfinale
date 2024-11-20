@@ -1,0 +1,52 @@
+<br>
+<div class="sign-up-container">
+    <h2>Créer un comptes</h2>
+
+    <!-- Formulaire d'inscription -->
+    <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+        <!-- Nom d'utilisateur -->
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" class="form-control" [(ngModel)]="user.username"
+                #username="ngModel" required>
+            <div *ngIf="username.invalid && username.touched" class="error">
+                Le nom d'utilisateur est requis.
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" [(ngModel)]="user.email" #email="ngModel"
+                required email>
+            <div *ngIf="email.invalid && email.touched" class="error">
+                Veuillez entrer un email valide.
+            </div>
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="form-group">
+            <label for="password">password</label>
+            <input type="password" id="password" name="password" class="form-control" [(ngModel)]="user.password"
+                #password="ngModel" required minlength="6">
+            <div *ngIf="password.invalid && password.touched" class="error">
+                Le mot de passe doit contenir au moins 6 caractères.
+            </div>
+        </div>
+
+        <!-- Confirmation du mot de passe -->
+        <div class="form-group">
+            <label for="confirmPassword">Confirmer le mot de passe</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel" required>
+            <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="error">
+                Les mots de passe doivent correspondre.
+            </div>
+        </div>
+
+        <!-- Bouton de soumission -->
+        <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid">S'inscrire</button>
+    </form>
+    <br>
+    <button class="btn btn-primary" (click)="navigateTo('login')" [class.active]="isActive('login')">Login</button>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="userData; else noData" class="profile-container">
+    <h2>Profil Utilisateur</h2>
+    <p><strong>Email :</strong> {{ userData.email }}</p>
+    <p><strong>mot de passe:</strong> {{ userData.password }}</p>
+    <p><strong>nom :</strong> {{ userData.username }}</p>
+    <!-- Ajoutez d'autres champs ici en fonction de votre structure de Firestore -->
+</div>
+
+<ng-template #noData>
+    <p class="no-data-message">Aucune donnée utilisateur trouvée.</p>
+</ng-template>

@@ -1,0 +1,305 @@
+/* Style global pour body et html */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Assure que la page prend 100% de la hauteur de l'écran */
+    font-family: Arial, sans-serif;
+    /* Police de base */
+}
+
+/* Conteneur principal */
+.terrain-container {
+    display: flex;
+    flex-direction: column;
+    /* Permet de positionner le footer en bas */
+    min-height: 100%;
+    /* Prend toute la hauteur de l'écran */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Conteneur des cartes */
+.terrain-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    flex-grow: 1;
+    /* Prend tout l'espace disponible, pousse le footer vers le bas */
+}
+
+/* Carte */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 120px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Agrandissement de la carte au clic */
+.card.expanded {
+    transform: scale(1.9);
+    /* Agrandir la carte */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    /* Ombre augmentée */
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.card-content .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-content .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.sidebar {
+    position: fixed;
+    /* Position fixe pour rester en place pendant le scroll */
+    top: 50px;
+    left: 10px;
+    width: 250px;
+    /* Largeur de la sidebar */
+    height: 100%;
+    /* Hauteur pleine page */
+    background-color: #333;
+    /* Couleur de fond sombre */
+    color: white;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.sidebar-button {
+    background-color: #3498db;
+    /* Couleur de fond initiale */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    width: 80%;
+    /* Le bouton prend toute la largeur du parent */
+    transition: all 0.3s ease;
+    /* Transition douce pour les effets */
+}
+
+/* Changement de couleur au survol du bouton */
+.sidebar-button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Changement de couleur au focus du bouton (lorsque l'on clique ou utilise le clavier) */
+.sidebar-button:focus {
+    outline: none;
+    background-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+    /* Pour un effet focus */
+}
+
+/* Style du bouton lorsque la classe active est appliquée */
+.sidebar-button.active {
+    background-color: #16a085;
+    /* Couleur différente pour l'état actif */
+    box-shadow: 0 0 10px rgba(22, 160, 133, 0.5);
+}
+
+.sidebar h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover {
+    background-color: #575757;
+}
+
+.sidebar .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Conteneur des cartes (le contenu principal) */
+.main-content {
+    margin-left: 270px;
+    /* Décale le contenu vers la droite, après la sidebar */
+    flex-grow: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Carte */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 120px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card.expanded {
+    transform: scale(1.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.card-content .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-content .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design pour les petits écrans */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding-top: 10px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+        /* Réduit l'espace laissé pour la sidebar */
+    }
+
+    .card-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+    .terrain-container {
+        flex-direction: column;
+        /* Empile la sidebar et le contenu principal en colonnes */
+    }
+
+    .sidebar {
+        position: relative;
+        /* La sidebar devient relative et se déplace avec la page */
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        /* Retirer le décalage pour les petits écrans */
+    }
+
+    .sidebar h2 {
+        font-size: 1.2rem;
+    }
+
+    .sidebar ul li {
+        text-align: center;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+}
