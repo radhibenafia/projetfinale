@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './immobilier.component.css'
 })
 export class ImmobilierComponent implements OnInit {
-  private supabaseUrl: string = 'https://atposvzwfeniczedypwu.supabase.co';
-  private supabaseKey: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0cG9zdnp3ZmVuaWN6ZWR5cHd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE3NTY3MDUsImV4cCI6MjA0NzMzMjcwNX0.VpAxKP8txqhWEp8SXXuMkVOtnkF_Zq8UZ674IL3Tj5c';
+  private supabaseUrl: string = 'ht';
+  private supabaseKey: string = 'V4cCI6MjA0NzMzMjcwNX0.VpAxKP8txqhWEp8SXXuMkVOtnkF_Zq8UZ674IL3Tj5c';
 
   // Initialisation du client Supabase
   private supabase = createClient(this.supabaseUrl, this.supabaseKey);
