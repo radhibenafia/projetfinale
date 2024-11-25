@@ -85,7 +85,7 @@ export class ProtestationComponent {
         message: 'Attestation acceptée'       // Le message à envoyer
       };
 
-      const userId = 'kQSq5j-V8Qx8J_2Bu'; // Votre `user_id` EmailJS
+      const userId = ''; // Votre `user_id` EmailJS
 
       // Envoi de l'email via EmailJS
       emailjs.send('service_tmjcug2', 'template_47vjb9e', templateParams, userId)
