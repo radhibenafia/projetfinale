@@ -7,13 +7,7 @@ import { Router } from '@angular/router';
 
 // Configuration Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyC3KjJQM-Y2p2ntMCrOIxzT99i-g3BSEao",
-  authDomain: "stageradhi.firebaseapp.com",
-  projectId: "stageradhi",
-  storageBucket: "stageradhi.firebasestorage.app",
-  messagingSenderId: "658036278421",
-  appId: "1:658036278421:web:c450f9c821b77757ed479c",
-  measurementId: "G-M8BDPRWSTQ"
+ 
 };
 
 @Component({
